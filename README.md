@@ -237,39 +237,6 @@ Multiplier
 
 ---
 
-# Сборка проекта
-
-## Требования
-
-- C++17
-- CMake ≥ 3.15
-- GCC / Clang / MSVC
-
-## Linux
-
-mkdir build
-cd build
-
-cmake ..
-make
-или
-
-mkdir build
-cd build
-
-cmake ..
-cmake --build .
----
-
-## Windows
-
-mkdir build
-cd build
-
-cmake ..
-cmake --build . --config Release
----
-
 # Использование
 
 ## Calculator
