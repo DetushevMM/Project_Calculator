@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include "calculator.hpp"
 
 // Базовый интерфейс любого выражения в дереве польской нотации. Рекурсивное вычисление узлов
 class IExpression {
@@ -106,6 +107,9 @@ class Multiply final : public IBinaryOperation {
 
 class Divide final : public IBinaryOperation {
   int Operation(int lhs, int rhs) const override {
+    if (rhs == 0) {
+      throw WrongExpressionError();
+    }
     return lhs / rhs;
   }
 
@@ -115,6 +119,9 @@ class Divide final : public IBinaryOperation {
 
 class Residual final : public IBinaryOperation {
   int Operation(int lhs, int rhs) const override {
+    if (rhs == 0) {
+      throw WrongExpressionError();
+    }
     return lhs % rhs;
   }
 
